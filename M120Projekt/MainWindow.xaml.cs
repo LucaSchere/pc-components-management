@@ -23,16 +23,17 @@ namespace M120Projekt
     {
         public MainWindow()
         {
+            Console.WriteLine("start");
             InitializeComponent();
             // Wichtig!
             Data.Global.context = new Data.Context();
             // Aufruf diverse APIDemo Methoden
-            APIDemo.DemoACreate();
-            APIDemo.DemoACreateKurz();
-            APIDemo.DemoARead();
-            APIDemo.DemoAUpdate();
-            APIDemo.DemoARead();
-            APIDemo.DemoADelete();
+            API.KomponentErstellen();
+            API.KomponentErstellenKurz();
+            API.KomponentLesen();
+            API.KomponentAktualisieren();
+            API.KomponentLesen();
+            API.KomponentLoeschen();
         }
     }
 }

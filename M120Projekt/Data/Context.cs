@@ -16,8 +16,8 @@ namespace M120Projekt.Data
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<KlasseA>().ToTable("KlasseA"); // Damit kein "s" angehängt wird an Tabelle
+            modelBuilder.Entity<Komponent>().ToTable("Komponent"); // Damit kein "s" angehängt wird an Tabelle
         }
-        public DbSet<KlasseA> KlasseA { get; set; }
+        public DbSet<Komponent> Komponent { get; set; }
     }
 }
