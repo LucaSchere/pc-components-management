@@ -16,7 +16,7 @@ namespace M120Projekt
             Debug.Print("--- Erstellen ---");
             // KlasseA
             Data.Komponent Komponent = new Data.Komponent();
-            Komponent.Name = "Artikel 1";
+            Komponent.Name = "Grafikkarte 11";
             Komponent.Beschreibung = "BlaBla";
             Komponent.Kategorie = "Bla";
             Komponent.Registriert_am = DateTime.Today;
@@ -27,7 +27,7 @@ namespace M120Projekt
         }
         public static void KomponentErstellenKurz()
         {
-            Data.Komponent Komponent = new Data.Komponent { Name = "Artikel 2", Beschreibung = "BlaBla", Kategorie = "Bla", Registriert_am = DateTime.Today, Preis = 222.2};
+            Data.Komponent Komponent = new Data.Komponent { Name = "CPU 22", Beschreibung = "BlaBla", Kategorie = "Bla", Registriert_am = DateTime.Today, Preis = 222.2};
             Int64 KomponentId = Komponent.Erstellen();
             Debug.Print("Artikel erstellt mit Id:" + KomponentId);
         }
@@ -58,7 +58,7 @@ namespace M120Projekt
         public static void KomponentLoeschen()
         {
             Debug.Print("--- Löschen ---");
-            Data.Komponent.LesenID(16).Loeschen();
+           // Data.Komponent.LesenID(2).Loeschen();
             Debug.Print("Artikel mit Id 1 gelöscht");
         }
         #endregion
