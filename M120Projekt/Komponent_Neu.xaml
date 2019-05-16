@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row ="0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="64"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="64"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">

@@ -1,0 +1,27 @@
+﻿<Popup x:Class="M120Projekt.Komponent_Loeschen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M120Projekt"
+        mc:Ignorable="d"
+        Height="150" Width="500" MinWidth="300">
+    <Grid Background="White" Margin="20, 0 ,20 ,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Content="Löschen?" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="36"></Label>
+        <Button Grid.Column="2" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <StackPanel>
+                <Image Source="images/baseline_check_black_48dp.png" Height="40" Width="40" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <StackPanel>
+                <Image Source="images/baseline_close_black_48dp.png" Height="40" Width="40" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Popup>

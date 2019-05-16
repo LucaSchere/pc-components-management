@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace M120Projekt
 {
     /// <summary>
-    /// Interaktionslogik für Komponent_Neu.xaml
+    /// Interaktionslogik für Komponent_Loeschen.xaml
     /// </summary>
-    public partial class Komponent_Neu : UserControl
+    public partial class Komponent_Loeschen : Window
     {
-        public Komponent_Neu()
+        public Komponent_Loeschen()
         {
             InitializeComponent();
-            Komponent_Loeschen popup = new Komponent_Loeschen();
         }
     }
 }

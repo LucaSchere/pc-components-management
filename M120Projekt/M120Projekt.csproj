@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PlaceholderTextBox, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PlaceholderTextBox.1.3.1\lib\PlaceholderTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -67,6 +70,9 @@
     <Compile Include="Komponent_Detail.xaml.cs">
       <DependentUpon>Komponent_Detail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Komponent_Loeschen.xaml.cs">
+      <DependentUpon>Komponent_Loeschen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Komponent_Neu.xaml.cs">
       <DependentUpon>Komponent_Neu.xaml</DependentUpon>
     </Compile>
@@ -78,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Komponent_Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Komponent_Loeschen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +157,9 @@
   <ItemGroup>
     <Resource Include="images\baseline_delete_black_48dp.png" />
     <Resource Include="images\baseline_edit_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\baseline_close_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,7 @@
                 </StackPanel>
             </Button>
 
-            <TextBox Name="searchBox" Grid.Column="0" Height="32" TextWrapping="Wrap" Width="Auto" Margin="16,16, 0,16" Text="Search"  FontSize="20" FontFamily="Segoe UI Semibold" Padding="5 0 5 0" Grid.ColumnSpan="1" >
+            <TextBox Name="searchBox" Grid.Column="0" Height="32" TextWrapping="Wrap" Width="Auto" Margin="16,16, 0,16"  FontSize="20" FontFamily="Segoe UI Semibold" Padding="5 0 5 0" Grid.ColumnSpan="1" >
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>

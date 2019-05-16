@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinWidth="500">
     <Grid>
-        <local:Komponent_Bearbeiten/>
+        <local:Komponent_Detail/>
 
     </Grid>
 </Window>
