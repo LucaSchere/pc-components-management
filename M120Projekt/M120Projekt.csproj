@@ -61,9 +61,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Uebersicht.xaml.cs">
-      <DependentUpon>Uebersicht.xaml</DependentUpon>
+    <Compile Include="Komponent_Bearbeiten.xaml.cs">
+      <DependentUpon>Komponent_Bearbeiten.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Komponent_Detail.xaml.cs">
+      <DependentUpon>Komponent_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Komponent_Neu.xaml.cs">
+      <DependentUpon>Komponent_Neu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Komponent_Uebersicht.xaml.cs">
+      <DependentUpon>Komponent_Uebersicht.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Komponent_Bearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Komponent_Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Komponent_Neu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Komponent_Uebersicht.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,10 +105,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Uebersicht.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\Configuration.cs" />
@@ -117,7 +138,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\baseline_add_circle_outline_black_48dp.png" />
+    <Resource Include="images\baseline_check_black_48dp.png" />
+    <Resource Include="images\baseline_keyboard_arrow_left_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\baseline_add_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\baseline_delete_black_48dp.png" />
+    <Resource Include="images\baseline_edit_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

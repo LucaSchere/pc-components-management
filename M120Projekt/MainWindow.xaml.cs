@@ -23,6 +23,7 @@ namespace M120Projekt
     {
         public MainWindow()
         {
+            /*
             Console.WriteLine("start");
             InitializeComponent();
             // Wichtig!
@@ -34,6 +35,12 @@ namespace M120Projekt
             API.KomponentAktualisieren();
             API.KomponentLesen();
             API.KomponentLoeschen();
+            */
+        }
+
+        private void Komponent_Uebersicht_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
