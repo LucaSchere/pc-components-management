@@ -70,24 +70,19 @@
     <Compile Include="Komponent_Detail.xaml.cs">
       <DependentUpon>Komponent_Detail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Komponent_Loeschen.xaml.cs">
-      <DependentUpon>Komponent_Loeschen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Komponent_Neu.xaml.cs">
       <DependentUpon>Komponent_Neu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Komponent_Uebersicht.xaml.cs">
       <DependentUpon>Komponent_Uebersicht.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Seiten.cs" />
+    <Compile Include="Validator.cs" />
     <Page Include="Komponent_Bearbeiten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Komponent_Detail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Komponent_Loeschen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,7 +94,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="KomponentenVerwaltung.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -111,8 +106,8 @@
     <Compile Include="Data\Global.cs" />
     <Compile Include="Data\Komponent.cs" />
     <Compile Include="Data\Context.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="KomponentenVerwaltung.xaml.cs">
+      <DependentUpon>KomponentenVerwaltung.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -160,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\baseline_close_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\baseline_menu_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

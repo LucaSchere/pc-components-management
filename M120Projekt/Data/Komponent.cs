@@ -68,6 +68,13 @@ namespace M120Projekt.Data
         {
             return Id.ToString(); // Für bessere Coded UI Test Erkennung
         }
+
+        public int naechsteID()
+        {
+            return 0;
+        }
+       
+
         #endregion
     }
 }

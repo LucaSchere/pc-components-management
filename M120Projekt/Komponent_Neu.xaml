@@ -14,20 +14,25 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row ="0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="108"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="64"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <Button x:Name="zurueck" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="zurueck_Click">
                 <StackPanel>
                     <Image Source="images/baseline_keyboard_arrow_left_black_48dp.png" Height="40" Width="40" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="ganzZurueck" Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="ganzZuruck_Click">
+                <StackPanel>
+                    <Image Source="images/baseline_menu_black_48dp.png" Height="40" Width="40" />
                 </StackPanel>
             </Button>
 
 
             <Label Content="Neuer Komponent" Grid.Column="1" Grid.ColumnSpan="1" Width="Auto" Margin="0,16,0,16" Height="32" FontSize="20" FontFamily="Segoe UI Semibold" Padding="0"/>
 
-            <Button Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <Button x:Name="speichern" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" IsEnabled="False" Click="speichern_Click">
                 <StackPanel>
                     <Image Source="images/baseline_check_black_48dp.png" Height="40" Width="40" />
                 </StackPanel>
@@ -44,12 +49,11 @@
             <Label Grid.Column="0" Content="Beschreibung:"  Margin="0,112,16,0" VerticalAlignment="Top" Height="32"/>
             <Label Grid.Column="0" Content="Kategorie:"  Margin="0,208,16,0" VerticalAlignment="Top" Height="32"/>
             <Label Grid.Column="0" Content="Preis:"  Margin="0,256,16,0" VerticalAlignment="Top" Height="32"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,16,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" IsReadOnly="True" MaxLines="1" MaxLength="32"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,64,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" Panel.ZIndex="1"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="Auto" MinHeight="23" MaxHeight="69" Margin="0,112,16,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="280" AcceptsReturn="True" MaxLines="4" Panel.ZIndex="2" MaxLength="128"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,208,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" Panel.ZIndex="3"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,256,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="32" Panel.ZIndex="4"/>
-
+            <TextBox x:Name="idNeu" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,16,16,0" TextWrapping="NoWrap" Text="Auto" VerticalAlignment="Top" Width="280" IsReadOnly="True" MaxLines="1" MaxLength="32"/>
+            <TextBox x:Name="nameNeu" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,64,16,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" TabIndex="1" TextChanged="nameNeu_TextChanged"/>
+            <TextBox x:Name="beschreibungNeu" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="Auto" MinHeight="23" MaxHeight="69" Margin="0,112,16,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" AcceptsReturn="True" MaxLines="4" TabIndex="2" MaxLength="256" TextChanged="beschreibungNeu_TextChanged"/>
+            <TextBox x:Name="kategorieNeu" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,208,16,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" TabIndex="3" TextChanged="kategorieNeu_TextChanged"/>
+            <TextBox x:Name="preisNeu" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,256,16,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="32" TabIndex="4" TextChanged="preisNeu_TextChanged"/>
         </Grid>
     </Grid>
 </UserControl>

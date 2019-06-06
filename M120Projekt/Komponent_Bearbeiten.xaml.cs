@@ -20,9 +20,90 @@ namespace M120Projekt
     /// </summary>
     public partial class Komponent_Bearbeiten : UserControl
     {
-        public Komponent_Bearbeiten()
+
+        private Data.Komponent k;
+
+        public Komponent_Bearbeiten(long id)
         {
             InitializeComponent();
+            this.k = Data.Komponent.LesenID(id);
+            setWerte(this.k);
+        }
+
+        private void setWerte(Data.Komponent k)
+        {
+            titel.Content = k.Name;
+
+            idEdit.Text = Convert.ToString(k.Id);
+            nameEdit.Text = k.Name;
+            beschreibungEdit.Text = k.Beschreibung;
+            kategorieEdit.Text = k.Kategorie;
+            preisEdit.Text = Convert.ToString(k.Preis);
+        }
+
+        private void aktivereEditieren()
+        {
+            if (nameEdit != null && beschreibungEdit != null && kategorieEdit != null && preisEdit != null)
+            {
+                List<String> fehler = Validator.validiere(new String[] { nameEdit.Text, beschreibungEdit.Text, kategorieEdit.Text, preisEdit.Text });
+                editieren.IsEnabled = fehler.Count == 0;
+                setFehlermeldungen(fehler);
+            }
+        }
+
+        private void setFehlermeldungen(List<String> fehler)
+        {
+            KomponentenVerwaltung.Instance.setzteFeedback(fehler, false);
+        }
+
+        private void nameEdit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            aktivereEditieren();
+        }
+
+        private void beschreibungEdit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            aktivereEditieren();
+        }
+
+        private void kategorieEdit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            aktivereEditieren();
+        }
+
+        private void preisEdit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            aktivereEditieren();
+        }
+
+        private void editieren_Click(object sender, RoutedEventArgs e)
+        {
+            abspeichern();
+        }
+
+        private void abspeichern()
+        {
+            
+            
+            this.k.Name = nameEdit.Text;
+            this.k.Beschreibung = beschreibungEdit.Text;
+            this.k.Kategorie = kategorieEdit.Text;
+            this.k.Registriert_am = DateTime.Today;
+            this.k.Preis = Convert.ToDouble(preisEdit.Text);
+
+            this.k.Aktualisieren();
+            KomponentenVerwaltung.Instance.wechselUC(this, this.k.Id, new Komponent_Detail(this.k.Id));
+            KomponentenVerwaltung.Instance.setzteFeedback("Komponent aktualisiert.", true);
+        }
+
+        private void zuruck_Click(object sender, RoutedEventArgs e)
+        {
+            KomponentenVerwaltung.Instance.zurueck();
+        }
+
+        private void ganzZuruck_Click(object sender, RoutedEventArgs e)
+        {
+            KomponentenVerwaltung.Instance.ganzZurueck();
         }
     }
 }

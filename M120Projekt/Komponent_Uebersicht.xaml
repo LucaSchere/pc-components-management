@@ -13,13 +13,13 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="64"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Margin="7" Click="Button_Click">
+            <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Margin="7" Click="Button_Click" TabIndex="2">
                 <StackPanel>
-                    <Image Source="images/baseline_add_black_48dp.png" Height="40" Width="40" />
+                    <Image x:Name="goToNeu" Source="images/baseline_add_black_48dp.png" Height="40" Width="40" />
                 </StackPanel>
             </Button>
 
-            <TextBox Name="searchBox" Grid.Column="0" Height="32" TextWrapping="Wrap" Width="Auto" Margin="16,16, 0,16"  FontSize="20" FontFamily="Segoe UI Semibold" Padding="5 0 5 0" Grid.ColumnSpan="1" >
+            <TextBox x:Name="suche" Grid.Column="0" Height="32" TextWrapping="Wrap" Width="Auto" Margin="16,16, 0,16"  FontSize="20" FontFamily="Segoe UI Semibold" Padding="5 0 5 0" Grid.ColumnSpan="1" TabIndex="1" TextChanged="suche_TextChanged" >
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -29,8 +29,20 @@
 
 
         </Grid>
-        <DataGrid Name="dataGrid" HorizontalAlignment="Stretch" Margin="16,64,16,16" VerticalAlignment="Stretch" ItemsSource="{Binding Ko}">
-
+        <DataGrid Name="dataGrid" HorizontalAlignment="Stretch" Margin="16,64,16,16" ColumnWidth="*" ItemsSource="{Binding gefilterteKomponenten }" TabIndex="3" CanUserAddRows="False" CanUserSortColumns="True" IsReadOnly="True" AutoGenerateColumns="False" Loaded="dataGrid_Loaded">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Zeile_DoppelKlick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"  Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name"  Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Beschreibung"  Binding="{Binding Beschreibung}"/>
+                <DataGridTextColumn Header="Kategorie"  Binding="{Binding Kategorie}"/>
+                <DataGridTextColumn Header="Preis"  Binding="{Binding Preis}"/>
+                <DataGridTextColumn Header="Registriert am"  Binding="{Binding Registriert_am, StringFormat=\{0:dd.MM.yy\}}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
     </Grid>

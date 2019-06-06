@@ -14,28 +14,32 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row ="0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="108"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="108"/>
             </Grid.ColumnDefinitions>
-            
-            <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <Button x:Name="zurueck" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="zurueck_Click">
                 <StackPanel>
-                    <Image Source="images/baseline_keyboard_arrow_left_black_48dp.png" Height="40" Width="40" Panel.ZIndex="1" />
+                    <Image Source="images/baseline_keyboard_arrow_left_black_48dp.png" Height="40" Width="40" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="ganzZurueck" Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="ganzZuruck_Click">
+                <StackPanel>
+                    <Image Source="images/baseline_menu_black_48dp.png" Height="40" Width="40" />
                 </StackPanel>
             </Button>
 
 
-            <Label Content="Name" Grid.Column="1" Grid.ColumnSpan="1" Width="Auto" Margin="0,16,0,16" Height="32" FontSize="20" FontFamily="Segoe UI Semibold" Padding="0"/>
+            <Label x:Name="titel" Content="Name" Grid.Column="1" Grid.ColumnSpan="1" Width="Auto" Margin="0,16,0,16" Height="32" FontSize="20" FontFamily="Segoe UI Semibold" Padding="0"/>
 
-            <Button Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <Button x:Name="loeschen" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" TabIndex="2" Click="loeschen_Click">
                 <StackPanel>
-                    <Image Source="images/baseline_delete_black_48dp.png" Height="40" Width="40" Panel.ZIndex="2" />
+                    <Image Source="images/baseline_delete_black_48dp.png" Height="40" Width="40"  />
                 </StackPanel>
             </Button>
-            <Button Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0">
+            <Button x:Name="geheZuEdit" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" TabIndex="3" Click="geheZuEdit_Click">
                 <StackPanel>
-                    <Image Source="images/baseline_edit_black_48dp.png" Height="40" Width="40" Panel.ZIndex="3" />
+                    <Image Source="images/baseline_edit_black_48dp.png" Height="40" Width="40"  />
                 </StackPanel>
             </Button>
 
@@ -50,13 +54,38 @@
             <Label Grid.Column="0" Content="Beschreibung:"  Margin="0,112,16,0" VerticalAlignment="Top" Height="32"/>
             <Label Grid.Column="0" Content="Kategorie:"  Margin="0,208,16,0" VerticalAlignment="Top" Height="32"/>
             <Label Grid.Column="0" Content="Preis:"  Margin="0,256,16,0" VerticalAlignment="Top" Height="32"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,16,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" IsReadOnly="True" MaxLines="1" MaxLength="32"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,64,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" Panel.ZIndex="1" IsReadOnly="True"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="Auto" MinHeight="23" MaxHeight="69" Margin="0,112,16,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="280" AcceptsReturn="True" MaxLines="5" Panel.ZIndex="2" IsReadOnly="True"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,208,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" Panel.ZIndex="3" IsReadOnly="True"/>
-            <TextBox Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,256,16,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="32" Panel.ZIndex="4" IsReadOnly="True"/>
+            <TextBox Name="idDetail" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,16,16,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="280" IsReadOnly="True" MaxLines="1" MaxLength="32" />
+            <TextBox Name="nameDetail" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,64,16,0" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" IsReadOnly="True"/>
+            <TextBox Name="beschreibungDetail" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="Auto" MinHeight="23" MaxHeight="69" Margin="0,112,16,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" AcceptsReturn="True" MaxLines="5" IsReadOnly="True" />
+            <TextBox Name="kategorieDetail" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,208,16,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="64" IsReadOnly="True" />
+            <TextBox Name="preisDetail" Grid.Column="1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="23" Margin="0,256,16,0" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="280" MaxLines="1" MaxLength="32" IsReadOnly="True"/>
 
         </Grid>
+
+
+        <Popup x:Name="popup" Height="150" Width="500" MinWidth="300" IsOpen="{Binding popupOffen}" Placement="AbsolutePoint">
+            <Grid Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Content="Löschen?" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="36"></Label>
+                <Button x:Name="loeschenJa" Grid.Column="2" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="loeschenJa_Click">
+                    <StackPanel>
+                        <Image Source="images/baseline_check_black_48dp.png" Height="40" Width="40" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="loeschenNein" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="loeschenNein_Click">
+                    <StackPanel>
+                        <Image Source="images/baseline_close_black_48dp.png" Height="40" Width="40" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Popup>
+
     </Grid>
     
+    
+
 </UserControl>

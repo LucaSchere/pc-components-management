@@ -58,7 +58,7 @@ namespace M120Projekt
         public static void KomponentLoeschen()
         {
             Debug.Print("--- Löschen ---");
-           // Data.Komponent.LesenID(2).Loeschen();
+            Data.Komponent.LesenID(1).Loeschen();
             Debug.Print("Artikel mit Id 1 gelöscht");
         }
         #endregion
