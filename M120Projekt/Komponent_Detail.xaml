@@ -63,25 +63,29 @@
         </Grid>
 
 
-        <Popup x:Name="popup" Height="150" Width="500" MinWidth="300" IsOpen="{Binding popupOffen}" Placement="AbsolutePoint">
-            <Grid Background="White">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+        <Popup x:Name="popup" Height="150" Width="500" MinWidth="300" IsOpen="{Binding popupOffen}" PlacementTarget="{Binding ElementName=KomponentenVerwaltung}"
+    Placement="Center">
+            <Border BorderBrush="Black" BorderThickness="3,3,3,3">
 
-                <Label Grid.Column="0" Content="Löschen?" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="36"></Label>
-                <Button x:Name="loeschenJa" Grid.Column="2" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="loeschenJa_Click">
-                    <StackPanel>
-                        <Image Source="images/baseline_check_black_48dp.png" Height="40" Width="40" />
-                    </StackPanel>
-                </Button>
-                <Button x:Name="loeschenNein" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="loeschenNein_Click">
-                    <StackPanel>
-                        <Image Source="images/baseline_close_black_48dp.png" Height="40" Width="40" />
-                    </StackPanel>
-                </Button>
-            </Grid>
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Content="Löschen?" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="36"></Label>
+                    <Button x:Name="loeschenJa" Grid.Column="2" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="loeschenJa_Click">
+                        <StackPanel>
+                            <Image Source="images/baseline_check_black_48dp.png" Height="40" Width="40" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="loeschenNein" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="50" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Click="loeschenNein_Click">
+                        <StackPanel>
+                            <Image Source="images/baseline_close_black_48dp.png" Height="40" Width="40" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
         </Popup>
 
     </Grid>

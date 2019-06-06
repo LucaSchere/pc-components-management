@@ -40,7 +40,7 @@
             </Button>
 
         </Grid>
-        <Grid Grid.Row="1" HorizontalAlignment="Center">
+        <Grid Name="FormGrid" Grid.Row="1" HorizontalAlignment="Center" FocusManager.FocusedElement="{Binding ElementName=nameEdit}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="Auto" MaxWidth="300"/>

@@ -69,10 +69,21 @@ namespace M120Projekt.Data
             return Id.ToString(); // Für bessere Coded UI Test Erkennung
         }
 
-        public int naechsteID()
+        public static long naechsteID()
         {
-            return 0;
-        }
+
+            //return Data.Global.context.Komponent.SqlQuery("SELECT IDENT_CURRENT('dbo.Komponent');");
+            try
+            {
+                long id = LesenAlle().Last().Id;
+                return id;
+            } catch (Exception e)
+            {
+
+            }
+            return 1;
+        }            
+          
        
 
         #endregion

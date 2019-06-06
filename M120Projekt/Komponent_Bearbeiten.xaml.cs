@@ -28,6 +28,10 @@ namespace M120Projekt
             InitializeComponent();
             this.k = Data.Komponent.LesenID(id);
             setWerte(this.k);
+
+            FocusManager.SetFocusedElement(FormGrid, nameEdit);
+            nameEdit.Focusable = true;
+            nameEdit.Focus();
         }
 
         private void setWerte(Data.Komponent k)
@@ -81,7 +85,7 @@ namespace M120Projekt
             abspeichern();
         }
 
-        private void abspeichern()
+        public void abspeichern()
         {
             
             
@@ -105,5 +109,7 @@ namespace M120Projekt
         {
             KomponentenVerwaltung.Instance.ganzZurueck();
         }
+
+       
     }
 }

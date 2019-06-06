@@ -123,5 +123,39 @@ namespace M120Projekt
             setzteFeedback(meldung, erfolg);
         }
 
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.S)
+            {
+                if (container.Content.GetType() == typeof(Komponent_Bearbeiten))
+                {
+                    ((Komponent_Bearbeiten)container.Content).abspeichern();
+                }
+            }
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.N)
+            {
+                wechselUC((UserControl)container.Content, 0, new Komponent_Neu());
+            }
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.E)
+            {
+                if (container.Content.GetType() == typeof(Komponent_Detail))
+                {
+                    ((Komponent_Detail)container.Content).wechslezuEdit();
+                }
+            }
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.D)
+            {
+                if (container.Content.GetType() == typeof(Komponent_Detail))
+                {
+                    ((Komponent_Detail)container.Content).oeffnePopup();
+                }
+            }
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.Home)
+            {
+                ganzZurueck();
+            }
+        }
     }
 }

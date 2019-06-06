@@ -41,7 +41,7 @@ namespace M120Projekt
 
         private void geheZuEdit_Click(object sender, RoutedEventArgs e)
         {
-            KomponentenVerwaltung.Instance.wechselUC(this, this.k.Id, new Komponent_Bearbeiten(this.k.Id));
+            wechslezuEdit();
         }
 
         private void zurueck_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace M120Projekt
 
         private void loeschen_Click(object sender, RoutedEventArgs e)
         {
-            popup.IsOpen = true;
+            oeffnePopup();
         }
 
         private void loeschenJa_Click(object sender, RoutedEventArgs e)
@@ -70,6 +70,18 @@ namespace M120Projekt
         private void ganzZuruck_Click(object sender, RoutedEventArgs e)
         {
             KomponentenVerwaltung.Instance.ganzZurueck();
+        }
+
+        public void wechslezuEdit()
+        {
+            KomponentenVerwaltung.Instance.wechselUC(this, this.k.Id, new Komponent_Bearbeiten(this.k.Id));
+        }
+
+        public void oeffnePopup()
+        {
+            popup.IsOpen = true;
+            loeschenJa.Focusable = true;
+            loeschenJa.Focus();
         }
     }
 }

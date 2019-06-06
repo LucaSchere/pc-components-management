@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
-        Title="Komponenten Verwaltung" Height="450" Width="800" MinWidth="500" MinHeight="500">
+        Title="Komponenten Verwaltung" Height="450" Width="800" MinWidth="500" MinHeight="500" KeyDown="Window_KeyDown">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

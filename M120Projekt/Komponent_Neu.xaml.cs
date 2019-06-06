@@ -24,6 +24,9 @@ namespace M120Projekt
         public Komponent_Neu()
         {
             InitializeComponent();
+            Object naechsteID = Data.Komponent.naechsteID();
+
+            idNeu.Text = Convert.ToString(naechsteID);
         }
 
         private void aktivereSpeichern()
@@ -66,8 +69,7 @@ namespace M120Projekt
         private void speichern_Click(object sender, RoutedEventArgs e)
         {
             long id = abspeichern();
-            KomponentenVerwaltung.Instance.wechselUC(this, 0, new Komponent_Detail(id));
-            KomponentenVerwaltung.Instance.setzteFeedback("Komponent erstellt.", true);
+            wechsleZuErstellterKomponente(id);
         }
 
         private long abspeichern()
@@ -82,6 +84,12 @@ namespace M120Projekt
             return k.Erstellen();
         }
 
+        private void wechsleZuErstellterKomponente(long id)
+        {
+            KomponentenVerwaltung.Instance.wechselUC(this, 0, new Komponent_Detail(id));
+            KomponentenVerwaltung.Instance.setzteFeedback("Komponent erstellt.", true);
+        }
+
         private void zurueck_Click(object sender, RoutedEventArgs e)
         {
             KomponentenVerwaltung.Instance.zurueck();
@@ -89,6 +97,18 @@ namespace M120Projekt
         private void ganzZuruck_Click(object sender, RoutedEventArgs e)
         {
             KomponentenVerwaltung.Instance.ganzZurueck();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (speichern.IsEnabled == true)
+            {
+                if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.S)
+                {
+                    long id = abspeichern();
+                    wechsleZuErstellterKomponente(id);
+                }
+            }
         }
     }
 }
