@@ -54,8 +54,7 @@ namespace M120Projekt
             {
                 Data.Komponent k = dataGridRow.Item as Data.Komponent;
                 KomponentenVerwaltung.Instance.wechselUC(this, 0,new Komponent_Detail(k.Id));
-            }
-            
+            }            
         }
 
         private void suche_TextChanged(object sender, TextChangedEventArgs e)
